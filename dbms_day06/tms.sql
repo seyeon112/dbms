@@ -1,0 +1,89 @@
+--상품테이블(TBL_PRODUCT)과 주문테이블(TBL_ORDER)의 구조와 데이터는 아래와 같다. 
+
+CREATE SEQUENCE PRODUCT_SEQ2;
+CREATE TABLE TBL_PRODUCT2(
+    ID NUMBER,
+    PRODUCT_NAME VARCHAR2(255) NOT NULL,
+    PRODUCT_PRICE NUMBER DEFAULT 0,
+    PRODUCT_STOCK NUMBER DEFAULT 0,
+    CONSTRAINT PK_PRODUCT2 PRIMARY KEY(ID)
+);
+
+CREATE SEQUENCE ORDER_SEQ2;
+CREATE TABLE TBL_ORDER2(
+    ID NUMBER,
+    PRODUCT_ID NUMBER,
+    ORDER_DATE TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT PK_ORDER2 PRIMARY KEY(ID),
+    CONSTRAINT FK_ORDER_PRODUCT2 FOREIGN KEY(PRODUCT_ID)
+    REFERENCES TBL_PRODUCT(ID)
+);
+
+INSERT INTO TBL_PRODUCT2
+VALUES(PRODUCT_SEQ2.NEXTVAL, '맥북', 1500000, 20);
+INSERT INTO TBL_PRODUCT2
+VALUES(PRODUCT_SEQ2.NEXTVAL, '모니터', 242000, 10);
+INSERT INTO TBL_PRODUCT2
+VALUES(PRODUCT_SEQ2.NEXTVAL, 'TV', 385000, 15);
+INSERT INTO TBL_PRODUCT2
+VALUES(PRODUCT_SEQ2.NEXTVAL, '공기청정기', 710033, 30);
+
+INSERT INTO TBL_ORDER2(ID, PRODUCT_ID)
+VALUES(ORDER_SEQ2.NEXTVAL, 3);
+INSERT INTO TBL_ORDER2(ID, PRODUCT_ID)
+VALUES(ORDER_SEQ2.NEXTVAL, 1);
+INSERT INTO TBL_ORDER2(ID, PRODUCT_ID)
+VALUES(ORDER_SEQ2.NEXTVAL, 4);
+INSERT INTO TBL_ORDER2(ID, PRODUCT_ID)
+VALUES(ORDER_SEQ2.NEXTVAL, 1);
+INSERT INTO TBL_ORDER2(ID, PRODUCT_ID)
+VALUES(ORDER_SEQ2.NEXTVAL, 1);
+INSERT INTO TBL_ORDER2(ID, PRODUCT_ID)
+VALUES(ORDER_SEQ2.NEXTVAL, 2);
+INSERT INTO TBL_ORDER2(ID, PRODUCT_ID)
+VALUES(ORDER_SEQ2.NEXTVAL, 2);
+INSERT INTO TBL_ORDER2(ID, PRODUCT_ID)
+VALUES(ORDER_SEQ2.NEXTVAL, 3);
+INSERT INTO TBL_ORDER2(ID, PRODUCT_ID)
+VALUES(ORDER_SEQ2.NEXTVAL, 3);
+INSERT INTO TBL_ORDER2(ID, PRODUCT_ID)
+VALUES(ORDER_SEQ2.NEXTVAL, 3);
+
+SELECT * FROM TBL_ORDER2;
+
+ 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+--위 데이터를 추가 후 아래 결과를 얻는 SQL문을 작성하시오.
+--(필요 시 서브쿼리, 조인, 집계함수 등을 사용하시오.)
+
+
+--[요구사항조건]
+--모든 결과 테이블은 알리아스(ALIAS)를 명확히 사용한다.
+--평균값보다 이상, 이하의 조건으로 SQL문을 작성할 때에는
+--FLOOR로 내림 값을 기준으로 한다.
+
+
+-- 1번) 상품의 평균 재고 수
+
+-- 2번) 맥북을 구매한 주문의 개수
+
+-- 3번) 가장 많이 주문한 상품 1개 가져오기
+
+-- 4번) 평균 주문개수 이상 주문된 상품 정보 중 이름, 가격, 재고만 가져오기 
+
+-- 5번) 주문 정보에서 공기청정기 주문 정보 중 주문날짜만 가져오기
+
+-- 6번) 판매중인 상품의 평균 가격의 평균 가격을 소수점 2자리수까지 가져오기
+
+-- 7번) 상품의 재고가 제일 작은 상품 1개 이름과 재고 가져오기
+
+-- 8번) TV 주문 정보 중 구매자ID(BUYER_ID)만 가져오기
+
+-- 9번) 상품의 가격중 제일 비싼 상품의 이름과 가격 가져오기
+
+-- 10번) 가장 적게 주문한 상품의 이름 가져오기
+
+
+

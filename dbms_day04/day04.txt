@@ -1,0 +1,54 @@
+집계 함수
+- SELECT, HAVING 절에서만 사용이 가능하다.
+- GROUP BY절과 같이 사용된다.
+1) 평균 AVG()
+2) 최대값 MAX()
+3) 최소값 MIN()
+4) 총합 SUM()
+5) 개수 COUNT()
+
+GROUP BY : ~ 별
+- 컬럼별로 GROUP화 시킨다.
+EX) GROUP BY 컬럼명 HAVING 조건식
+
+ORDER BY : 정렬
+- ORDER BY는 컬럼명으로 그룹을 시켜준다. 단, 모든 쿼리 중 제일 마지막에 선언된다.
+ORDER BY 컬럼명 ASC
+ORDER BY 컬럼명 DESC
+
+ASC : 오름차순
+DESC : 내림차순
+
+
+---------------------------------------------------
+TCL 명령어
+
+GRANT : 권한을 주는 명령어
+REVOKE : 권한을 뺏는 명령어
+COMMIT : SQL문의 QUERY 명령어를 확정하는 명령어
+ROLLBACK : 기존 COMMIT 시점으로 돌아가는 명령어
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+DML(Data Manipulation Language)
+- SELECT, INSERT, UPDATE, DELETE
+
+1) SELECT : 조회
+SELECT * FROM TABLE_NAME;
+SELECT ID, TBL_NAME, TBL_AGE FROM TBL_NAME;
+
+조건절
+SELECT * FROM TBL_NAME LIKE NAME='%남궁민%';
+SELECT * FROM TBL_NAME LIKE NAME='%이';
+SELECT * FROM TBL_NAME LIKE NAME='이%';
+
+SELECT * FROM TBL_NAME WHERE 조건식;
+SELECT * FROM TBL_NAME WHERE NAME='이름';
+SELECT * FROM TBL_NAME WHERE AGE > 20;
+
+조건식:
+>, < : 초과, 미만
+>=, <= : 이상, 이하
+= : 같다
+<>, !=, ^= : 같지 않다.
+AND : 둘 다 참이면 참
+OR : 둘 중 하나라도 참이면 참
+※ 위 연산자들은 WHERE 절에서 사용이 가능하다.
+
+
+2) INSERT INTO ~ VALUES: 추가
+INSERT INTO TABLE_NAME VALUES('홍길동', 20);
+INSERT INTO TABLE_NAME(NAME, AGE) 
+VALUES('홍길동', 20);
+
+
+
+
+
+
+
+
+
+
